@@ -89,7 +89,7 @@ angular.module('HomeModules', ['me-lazyload'])
 
 					$("html,body").animate({
 						scrollTop: 0
-					}, 2000);
+					}, 1000);
 
 				});
 		
