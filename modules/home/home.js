@@ -71,16 +71,42 @@ angular.module('HomeModules', ['me-lazyload'])
 			localStorage.headerName = this.innerText
 		})
 		 
-		$('.index_top_shang').on("click", function() {
-			$("body").animate({                 
-                        scrollTop: 0  
-                    }, 500); 
-		})
 
+		
+		$(window).scroll(function() {
+
+					var t = document.documentElement.scrollTop || document.body.scrollTop;
+					var ch = document.documentElement.clientHeight;
+
+					if(t >= ch) {
+						$(".index_top_shang").css("display", "block");
+					} else {
+						$(".index_top_shang").css("display", "none");
+					}
+				});
+
+				$(".index_top_shang").click(function() {
+
+					$("html,body").animate({
+						scrollTop: 0
+					}, 2000);
+
+				});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 
 		function GetRTime() {
-			var EndTime = new Date('2016/11/20 24:00:00');
+			var EndTime = new Date('2018/11/20 24:00:00');
 			var NowTime = new Date();
 			var t = EndTime.getTime() - NowTime.getTime();
 			var d = 0;
